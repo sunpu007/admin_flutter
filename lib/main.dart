@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/ui/pages/layout.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'core/viewmodel/app_view_model.dart';
+
+void main() => runApp(
+  MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_) => AppViewModel()),
+    ],
+    child: const MyApp(),
+  )
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
