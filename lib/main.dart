@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/ui/pages/layout.dart';
 import 'package:provider/provider.dart';
+
+import 'ui/pages/layout/layout.dart';
 
 import 'core/viewmodel/app_view_model.dart';
 
