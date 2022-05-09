@@ -52,8 +52,8 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
                   color: Color(widget.text == 'Dashboard' ? 0XFF409EFF : 0XFFBFCBD9),
                 ),
               ),
-              const Flexible(fit: FlexFit.tight, child: SizedBox()),
-              widget.text == '系统管理' ? const Align(
+              widget.sidebarStatus ? const Flexible(fit: FlexFit.tight, child: SizedBox()) : const SizedBox(),
+              widget.text == '系统管理' && widget.sidebarStatus ? const Align(
                 alignment: Alignment.centerRight,
                 child: Icon(Icons.expand_more, color: Color(0XFF909399),),
               ) : const SizedBox(),
