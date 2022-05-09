@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/ui/pages/dashboard/dashboard.dart';
 import 'package:provider/provider.dart';
 
 import 'ui/pages/layout/layout.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
       ),
-      home: const Layout(),
+      home: const DashboardPage(),
     );
   }
 }

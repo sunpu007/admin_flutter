@@ -6,8 +6,8 @@ import 'components/hamburger.dart';
 import 'components/menu_item.dart';
 
 class Layout extends StatelessWidget {
-  final Widget? child;
-  const Layout({ Key? key, this.child }) : super(key: key);
+  final Widget child;
+  const Layout({ Key? key, required this.child }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +31,12 @@ class Layout extends StatelessWidget {
               ),
               Expanded(
                 child: Column(
-                  children: const [
-                    HamburgerWidget()
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const HamburgerWidget(),
+                    Expanded(
+                      child: this.child,
+                    ),
                   ],
                 ),
               )
