@@ -37,7 +37,7 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
         child: Container(
           height: 56,
           color: hoverStatus ? const Color(0xFF263445) : Colors.transparent,
-          padding: EdgeInsets.only(left: widget.sidebarStatus ? 20 : 0),
+          padding: EdgeInsets.symmetric(horizontal: widget.sidebarStatus ? 20 : 0),
           child: Row(
             mainAxisAlignment: widget.sidebarStatus ? MainAxisAlignment.start : MainAxisAlignment.center,
             children: [
@@ -51,7 +51,12 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
                 style: TextStyle(
                   color: Color(widget.text == 'Dashboard' ? 0XFF409EFF : 0XFFBFCBD9),
                 ),
-              )
+              ),
+              const Flexible(fit: FlexFit.tight, child: SizedBox()),
+              widget.text == '系统管理' ? const Align(
+                alignment: Alignment.centerRight,
+                child: Icon(Icons.expand_more, color: Color(0XFF909399),),
+              ) : const SizedBox(),
             ],
           ),
         ),
