@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/core/router/router.dart';
 import 'package:myapp/core/viewmodel/app_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -22,11 +23,7 @@ class Layout extends StatelessWidget {
                 height: double.infinity,
                 color: const Color(0XFF304156),
                 child: ListView(
-                  children: [
-                    MenuItemWidget(text: 'Dashboard', icon: Icons.dashboard, sidebarStatus: appVM.sidebarStatus,),
-                    MenuItemWidget(text: '定时任务', icon: Icons.timer, sidebarStatus: appVM.sidebarStatus,),
-                    MenuItemWidget(text: '系统管理', icon: Icons.settings, sidebarStatus: appVM.sidebarStatus,),
-                  ],
+                  children: AppRouter.menus.map((item) => MenuItemWidget(text: item.title!, icon: item.icon!, sidebarStatus: appVM.sidebarStatus,)).toList(),
                 ),
               ),
               Expanded(
